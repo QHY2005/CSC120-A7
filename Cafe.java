@@ -1,5 +1,5 @@
 /**
- * Cafe is the building that sells coffee and manages inventory.
+ * Cafe is the place that sells coffee and manages inventory.
  * Its inventory includes coffee, sugar packets, cream servings, and cups.
  */
 public class Cafe extends Building implements CafeRequirements {
