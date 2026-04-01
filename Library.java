@@ -88,47 +88,40 @@ public class Library extends Building implements LibraryRequirements {
         }
     }
 public static void main(String[] args) {
-    Library myLibrary = new Library("Totally Not Procrastinating Library", "Somewhere near finals week", 5);
+    Library myLibrary = new Library("Neilson Library", "Northampton, MA", 4);
 
     System.out.println(myLibrary);
-    System.out.println("Welcome. Please pretend you're here to study.");
+    System.out.println("Welcome to the library.");
 
-  
-    myLibrary.addTitle("How to Start Homework at 2AM by Me");
-    myLibrary.addTitle("50 Ways to Avoid Doing Problem Sets");
-    myLibrary.addTitle("I Swear I'll Go to Office Hours Tomorrow");
-    myLibrary.addTitle("Emotional Damage: Midterm Edition");
+    myLibrary.addTitle("The Rise and Fall of Ancient Egypt by Toby Wilkinson");
+    myLibrary.addTitle("The Oxford History of Ancient Egypt by Ian Shaw");
+    myLibrary.addTitle("The Art of War by Sun Tzu");
+    myLibrary.addTitle("The Governance of China by Xi Jinping");
 
-  
-    System.out.println("Checking books...");
-    System.out.println("Do we have motivation? " +
-        myLibrary.containsTitle("Motivation"));
+    System.out.println("Ops, checking books...");
+    System.out.println("Do we have Sapiens? " + myLibrary.containsTitle("Sapiens by Yuval Noah Harari"));
 
-    System.out.println("Is '2AM Homework' available? " +
-        myLibrary.isAvailable("How to Start Homework at 2AM by Me"));
+    System.out.println("Is Ancient Egypt available? " +
+        myLibrary.isAvailable("The Rise and Fall of Ancient Egypt by Toby Wilkinson"));
 
+    myLibrary.checkOut("The Rise and Fall of Ancient Egypt by Toby Wilkinson");
 
-    myLibrary.checkOut("How to Start Homework at 2AM by Me");
+    System.out.println("After checkout:");
+    System.out.println("Is Ancient Egypt still available? " +
+        myLibrary.isAvailable("The Rise and Fall of Ancient Egypt by Toby Wilkinson"));
 
-    System.out.println("\nAfter panic checkout:");
-    System.out.println("Is it still available? " +
-        myLibrary.isAvailable("How to Start Homework at 2AM by Me"));
+    myLibrary.returnBook("The Rise and Fall of Ancient Egypt by Toby Wilkinson");
 
+    System.out.println("After return:");
+    System.out.println("Is Ancient Egypt available again? " +
+        myLibrary.isAvailable("The Rise and Fall of Ancient Egypt by Toby Wilkinson"));
 
-    myLibrary.returnBook("How to Start Homework at 2AM by Me");
-
-    System.out.println("\nAfter pretending everything is fine:");
-    System.out.println("Is it available again? " +
-        myLibrary.isAvailable("How to Start Homework at 2AM by Me"));
-
-   
-    System.out.println("Current collection (aka coping mechanisms):");
+    System.out.println("Current collection:");
     myLibrary.printCollection();
 
-   
-    myLibrary.removeTitle("50 Ways to Avoid Doing Problem Sets");
+    myLibrary.removeTitle("The Art of War by Sun Tzu");
 
-    System.out.println("Character development unlocked:");
+    System.out.println("After removing The Art of War:");
     myLibrary.printCollection();
-    }
+} 
 }
