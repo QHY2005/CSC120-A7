@@ -37,7 +37,7 @@ public class House extends Building implements HouseRequirements {
     }
 
     /**
-     * Return the total number of floors in the house
+     * Return the total number of residents in the house
      */
     public int nResidents() {
         return this.residents.size();
